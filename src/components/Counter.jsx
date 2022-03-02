@@ -3,19 +3,28 @@ import React, { Component } from 'react'
 class Counter extends Component {
 
     state = {
-        count: 0
+        count: 0,
+        imgUrl: 'https://picsum.photos/200'
     };
-
+  styles = {
+     fontSize: 10
+ };
     render() {
 
         return (
-            <div>
+            <div className='container-fluid'>
+                        {/* setting attrbutes */}
+                    {/* <img src={this.state.imgUrl} alt="" /> */}
+
+                    {/* setting style */}
                     <span>{this.state.count}</span>
                     {/* we cal also create a operation */}
-                    <span>{ 2 + 2}</span>
+                    <span className='badge bg-danger m-2'
+                    // style={this.styles}
+                    >{ 2 + 2}</span>
                     {/*  we can also pass a value from a function */}
                     <span>{this.formatCount()}</span>
-                    <button type="button" className="btn btn-primary">Increment</button>
+                    <button type="button" className="btn btn-primary btn-sm">Increment</button>
                   
                       
             </div>
