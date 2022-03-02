@@ -4,7 +4,8 @@ class Counter extends Component {
 
     state = {
         count: 0,
-        imgUrl: 'https://picsum.photos/200'
+        imgUrl: 'https://picsum.photos/200',
+        tags: ['tag1', 'tag2', 'tag3']
     };
   styles = {
      fontSize: 10
@@ -29,6 +30,12 @@ class Counter extends Component {
                     {/*  we can also pass a value from a function */}
                     <span>{this.formatCount()}</span>
                     <button type="button" className="btn btn-primary btn-sm">Increment</button>
+
+                    {/* rendering list lesson */}
+                    <ul>
+                        {this.state.tags.map( i =>  <li key={ i }>{ i }</li>)}
+                        {/* //exp when rendereing lists, we SHOULD put a key prop because react needs to uniquely identify each items so that react will easily identify what element will be change when state is updated to be used in virtual dom */}
+                    </ul>
                   
                       
             </div>
