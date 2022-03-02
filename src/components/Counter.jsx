@@ -5,15 +5,19 @@ class Counter extends Component {
     state = {
         count: 0,
         imgUrl: 'https://picsum.photos/200',
-        tags: ['tag1', 'tag2', 'tag3']
+        // tags: ['tag1', 'tag2', 'tag3']
+        tags: []
     };
   styles = {
      fontSize: 10
  };
 
+ renderTags() {
+            if(this.state.tags.length === 0) { return  <p> No data</p>}
+            return <ul> { this.state.tags.map( tag => <li key={tag}>  tag </li> ) }</ul>
+        }
 
     render() {
-
 
         return (
             <div className='container-fluid'>
@@ -32,10 +36,16 @@ class Counter extends Component {
                     <button type="button" className="btn btn-primary btn-sm">Increment</button>
 
                     {/* rendering list lesson */}
+                    {/* //todo my own way of conditional rendering */}
+                    {/* { this.state.tags.length > 0 &&
                     <ul>
                         {this.state.tags.map( i =>  <li key={ i }>{ i }</li>)}
-                        {/* //exp when rendereing lists, we SHOULD put a key prop because react needs to uniquely identify each items so that react will easily identify what element will be change when state is updated to be used in virtual dom */}
                     </ul>
+                     } */}
+
+                     {/* //todo tutorial  */}
+                     {this.renderTags()}
+                     {/* //Reminder when rendereing lists, we SHOULD put a key prop because react needs to uniquely identify each items so that react will easily identify what element will be change when state is updated to be used in virtual dom */}
                   
                       
             </div>
