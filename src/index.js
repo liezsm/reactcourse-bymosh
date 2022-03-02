@@ -7,11 +7,11 @@ import Counter from './components/Counter'
 function App(){
 
     return (
-        <div>
+        <React.Fragment>
             Hello world!
 
             <Counter />
-        </div>
+        </React.Fragment>
     )
 }
 

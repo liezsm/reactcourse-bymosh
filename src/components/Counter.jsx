@@ -1,38 +1,30 @@
 import React, { Component } from 'react'
 
-class Counter extends React.Component {
+class Counter extends Component {
+
+    state = {
+        count: 0
+    };
 
     render() {
 
         return (
             <div>
-                    <div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
-</div>
-<div class="alert alert-secondary" role="alert">
-  A simple secondary alert—check it out!
-</div>
-<div class="alert alert-success" role="alert">
-  A simple success alert—check it out!
-</div>
-<div class="alert alert-danger" role="alert">
-  A simple danger alert—check it out!
-</div>
-<div class="alert alert-warning" role="alert">
-  A simple warning alert—check it out!
-</div>
-<div class="alert alert-info" role="alert">
-  A simple info alert—check it out!
-</div>
-<div class="alert alert-light" role="alert">
-  A simple light alert—check it out!
-</div>
-<div class="alert alert-dark" role="alert">
-  A simple dark alert—check it out!
-</div>
-                
+                    <span>{this.state.count}</span>
+                    {/* we cal also create a operation */}
+                    <span>{ 2 + 2}</span>
+                    {/*  we can also pass a value from a function */}
+                    <span>{this.formatCount()}</span>
+                    <button type="button" className="btn btn-primary">Increment</button>
+                  
+                      
             </div>
         )
+    }
+
+    formatCount() {
+        const { count } = this.state;
+        return count === 0 ?  <h1>Zero</h1> : count;
     }
 }
 
