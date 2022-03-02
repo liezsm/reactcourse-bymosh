@@ -9,7 +9,10 @@ class Counter extends Component {
   styles = {
      fontSize: 10
  };
+
+
     render() {
+
 
         return (
             <div className='container-fluid'>
@@ -17,7 +20,8 @@ class Counter extends Component {
                     {/* <img src={this.state.imgUrl} alt="" /> */}
 
                     {/* setting style */}
-                    <span>{this.state.count}</span>
+                    {/* rendering class dynamically */}
+                    <span className= {this.getBadgeClasses()} >{this.state.count}</span>
                     {/* we cal also create a operation */}
                     <span className='badge bg-danger m-2'
                     // style={this.styles}
@@ -29,6 +33,13 @@ class Counter extends Component {
                       
             </div>
         )
+    }
+
+    getBadgeClasses() {
+            
+        let classes = 'badge m-2';
+        classes += (this.state.count === 0)  ?  'badge bg-warning': 'badge bg-primary';
+        return classes;
     }
 
     formatCount() {
