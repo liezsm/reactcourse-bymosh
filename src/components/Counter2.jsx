@@ -25,7 +25,7 @@ class Counter2 extends Component{
     //     console.log('Clicked!', this)
     // }
 
-    handleIncrement = () => {
+    handleIncrement = product => {
 
         // console.log('click', this)
         // this.setState( { count: this.state.count + 1})
@@ -35,7 +35,11 @@ class Counter2 extends Component{
                 count: prevState.count + 1
             }
         })
+        console.log(product)
     }
+
+    // exp part: passing event arguments
+    // reminder: when we want to pass an event argument, on the event put an arrow function and put the exact function with the arguments you want to pass
     render() {
        
 // todo started for handling events part
@@ -45,7 +49,7 @@ class Counter2 extends Component{
             <span className={this.getBadgeclasses() }  > {this.state.count} </span>
             <button
              className="btn btn-primary btn-sm"
-             onClick={this.handleIncrement}
+             onClick={ () => this.handleIncrement( { id: 1})}
             >Increment</button>
 
             </div>
