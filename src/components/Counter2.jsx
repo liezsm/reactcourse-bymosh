@@ -26,7 +26,15 @@ class Counter2 extends Component{
     // }
 
     handleIncrement = () => {
-        console.log('click', this)
+
+        // console.log('click', this)
+        // this.setState( { count: this.state.count + 1})
+        // exp the other way
+        this.setState( prevState => {
+            return {
+                count: prevState.count + 1
+            }
+        })
     }
     render() {
        
