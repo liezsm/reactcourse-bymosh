@@ -4,7 +4,7 @@ import React, {Component} from 'react'
 class Counter2 extends Component{
 
     state = {
-        count: 2
+        value: this.props.value
     }
 
     // constructor() {
@@ -17,7 +17,7 @@ class Counter2 extends Component{
 
     getBadgeclasses() {
         let classes = "badge m-2 ";
-        classes += (this.state.count === 0 ) ? 'bg-warning text-dark' : 'badge bg-success'
+        classes += (this.state.value === 0 ) ? 'bg-warning text-dark' : 'badge bg-success'
         return classes;
     }
 
@@ -46,7 +46,7 @@ class Counter2 extends Component{
         return(
             <div className='container container-fluid m-3'>
             
-            <span className={this.getBadgeclasses() }  > {this.state.count} </span>
+            <span className={this.getBadgeclasses() }  > {this.state.value} </span>
             <button
              className="btn btn-primary btn-sm"
              onClick={ () => this.handleIncrement( { id: 1})}
